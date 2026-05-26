@@ -1,0 +1,22 @@
+test:tuple_binop_equals {
+  $x = ("hello", -6);
+  $y = ("hello", -6);
+  $a = (1, true, $x);
+  @b = (1, true, $y);
+
+  if (!($a == @b)) {
+    return 1;
+  }
+
+  if ($a == (1, true, ("ello", -6))) {
+    return 1;
+  }
+
+  if ($a != @b) {
+    return 1;
+  }
+
+  if (!($a != (1, true, ("ello", -6)))) {
+    return 1;
+  }
+}
